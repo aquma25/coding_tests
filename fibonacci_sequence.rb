@@ -3,10 +3,13 @@
 
 # n番目の計算結果を出力する
 def fibonacci(n)
-  return 1 if n < 0
-  return n if n < 2
+  return "not int" if n < 0
+  return 1         if n < 2
 
+  # 再帰
   fibonacci(n - 2) + fibonacci(n - 1)
 end
 
-puts Range.new(1, 10).map { |num| fibonacci(num) }
+puts Range.new(0, 9).map {|num|
+ { "#{num}": fibonacci(num) }
+}
